@@ -1,0 +1,17 @@
+C:\Users\jpwas\OneDrive\Desktop\applicationBase\baseApplication\bin\Debug\net7.0-windows\baseApplication.exe
+C:\Users\jpwas\OneDrive\Desktop\applicationBase\baseApplication\bin\Debug\net7.0-windows\baseApplication.deps.json
+C:\Users\jpwas\OneDrive\Desktop\applicationBase\baseApplication\bin\Debug\net7.0-windows\baseApplication.runtimeconfig.json
+C:\Users\jpwas\OneDrive\Desktop\applicationBase\baseApplication\bin\Debug\net7.0-windows\baseApplication.dll
+C:\Users\jpwas\OneDrive\Desktop\applicationBase\baseApplication\bin\Debug\net7.0-windows\baseApplication.pdb
+C:\Users\jpwas\OneDrive\Desktop\applicationBase\baseApplication\obj\Debug\net7.0-windows\baseApplication.csproj.AssemblyReference.cache
+C:\Users\jpwas\OneDrive\Desktop\applicationBase\baseApplication\obj\Debug\net7.0-windows\baseApplication.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jpwas\OneDrive\Desktop\applicationBase\baseApplication\obj\Debug\net7.0-windows\baseApplication.AssemblyInfoInputs.cache
+C:\Users\jpwas\OneDrive\Desktop\applicationBase\baseApplication\obj\Debug\net7.0-windows\baseApplication.AssemblyInfo.cs
+C:\Users\jpwas\OneDrive\Desktop\applicationBase\baseApplication\obj\Debug\net7.0-windows\baseApplication.csproj.CoreCompileInputs.cache
+C:\Users\jpwas\OneDrive\Desktop\applicationBase\baseApplication\obj\Debug\net7.0-windows\baseApplication.dll
+C:\Users\jpwas\OneDrive\Desktop\applicationBase\baseApplication\obj\Debug\net7.0-windows\refint\baseApplication.dll
+C:\Users\jpwas\OneDrive\Desktop\applicationBase\baseApplication\obj\Debug\net7.0-windows\baseApplication.pdb
+C:\Users\jpwas\OneDrive\Desktop\applicationBase\baseApplication\obj\Debug\net7.0-windows\baseApplication.genruntimeconfig.cache
+C:\Users\jpwas\OneDrive\Desktop\applicationBase\baseApplication\obj\Debug\net7.0-windows\ref\baseApplication.dll
+C:\Users\jpwas\OneDrive\Desktop\applicationBase\baseApplication\bin\Debug\net7.0-windows\Spire.Doc.dll
+C:\Users\jpwas\OneDrive\Desktop\applicationBase\baseApplication\obj\Debug\net7.0-windows\baseApplication.csproj.CopyComplete
