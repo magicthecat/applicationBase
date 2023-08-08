@@ -140,13 +140,21 @@ public static string GetFormattedRtfFromMarkdown(string markdownText)
                         string name = parts[0].Trim().TrimStart('=');
                         string value = parts[1].Trim();
 
-                        // Add to globals dictionary
-                        globals[name] = value;
-                    }
-                }
+                // Add to globals dictionary
+                globals[name] = value;
             }
+        }
 
-            // Replace variables in line
+        // Check if we reached the end of the array without finding a closing tag for GLOBALS
+        if (i == lines.Length - 1 && lines[i].Trim() != "*/")
+        {
+            // Handle error: No closing tag found for GLOBALS block.
+            throw new InvalidOperationException("No closing tag found for GLOBALS block.");
+        }
+    }
+      
+      
+                  // Replace variables in line
             foreach (var global in globals)
             {
                 lines[i] = lines[i].Replace("{" + global.Key + "}", global.Value);

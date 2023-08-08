@@ -9,31 +9,50 @@ public class TextBoxDataComponentFactory : IDataComponentFactory
 
     public IDataComponent CreateAndSetup()
     {
-        // Create the SplitContainer
-        SplitContainer splitContainer = new SplitContainer();
-        splitContainer.Dock = DockStyle.Fill;
-        splitContainer.Orientation = Orientation.Vertical; // This sets the split to be horizontal.
-        form.Controls.Add(splitContainer);
+        // Create the SplitContainer for Left and Right sides
+        SplitContainer mainSplitContainer = new SplitContainer();
+        mainSplitContainer.Dock = DockStyle.Fill;
+        mainSplitContainer.Orientation = Orientation.Vertical;
+        form.Controls.Add(mainSplitContainer);
 
-        // Setup TextBox in the left side of the SplitContainer
-        TextBox textBox1 = new TextBox();
-        textBox1.Multiline = true;
-        textBox1.Dock = DockStyle.Fill;
-        splitContainer.Panel1.Controls.Add(textBox1);
+        // Create the SplitContainer for the two TextBox controls on the Left
+        SplitContainer leftSplitContainer = new SplitContainer();
+        leftSplitContainer.Dock = DockStyle.Fill;
+        leftSplitContainer.Orientation = Orientation.Horizontal;
+        mainSplitContainer.Panel1.Controls.Add(leftSplitContainer);
 
-        // Setup RichTextBox in the right side of the SplitContainer
+        // Setup TextBox for GLOBALS on the top of the left side
+        TextBox globalsTextBox = new TextBox();
+        globalsTextBox.Multiline = true;
+        globalsTextBox.Dock = DockStyle.Fill;
+        leftSplitContainer.Panel1.Controls.Add(globalsTextBox);
+
+        // Setup main TextBox on the bottom of the left side
+        TextBox mainTextBox = new TextBox();
+        mainTextBox.Multiline = true;
+        mainTextBox.Dock = DockStyle.Fill;
+        leftSplitContainer.Panel2.Controls.Add(mainTextBox);
+
+        // Setup RichTextBox on the right side
         RichTextBox richTextBox1 = new RichTextBox();
         richTextBox1.Dock = DockStyle.Fill;
-        richTextBox1.ReadOnly = true; // Makes the RichTextBox non-editable
-        splitContainer.Panel2.Controls.Add(richTextBox1);
+        richTextBox1.ReadOnly = true;
+        mainSplitContainer.Panel2.Controls.Add(richTextBox1);
 
-        // Event to update the RichTextBox as you type in the TextBox
-textBox1.TextChanged += (sender, e) => 
-{
-    string correctedMarkdown = MarkdownProcessor.CorrectMarkdown(textBox1.Text);
-    richTextBox1.Rtf = MarkdownProcessor.GetFormattedRtfFromMarkdown(correctedMarkdown);
-};
+        // Event to update the RichTextBox when typing in the TextBox
+        EventHandler updateRichTextBox = (sender, e) =>
+        {
+            string globals = "/* GLOBALS\n" + globalsTextBox.Text + "\n*/\n";
+            string content = mainTextBox.Text;
+            string combinedContent = globals + content;
 
-        return new TextBoxAdapter(textBox1); // Assuming you still want the IDataComponent interface for other functionalities.
+            string correctedMarkdown = MarkdownProcessor.CorrectMarkdown(combinedContent);
+            richTextBox1.Rtf = MarkdownProcessor.GetFormattedRtfFromMarkdown(correctedMarkdown);
+        };
+
+        mainTextBox.TextChanged += updateRichTextBox;
+        globalsTextBox.TextChanged += updateRichTextBox;
+
+        return new TextBoxAdapter(mainTextBox); // Assuming you still want the IDataComponent interface for other functionalities.
     }
 }
