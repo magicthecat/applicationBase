@@ -27,7 +27,7 @@ public class ExportMenu
     private void ExportAsDocMenuItem_Click(object sender, EventArgs e)
     {
        
-           string globals = "/* GLOBALS\n" + dataComponent.GlobalsContent + "\n*/\n";
+        string globals = "/* GLOBALS\n" + dataComponent.GlobalsContent + "\n*/\n";
         string mainContent = dataComponent.MainContent;
         string content = globals + mainContent;
         

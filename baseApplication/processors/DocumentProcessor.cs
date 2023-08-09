@@ -13,7 +13,7 @@ public class DocumentProcessor
     public Document ProcessToDoc(string text)
     {
         // Process the global variables before anything else
-         //MarkdownProcessor.CorrectMarkdown(text);
+        text = MarkdownProcessor.CorrectMarkdown(text);
         string[] lines = text.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
         Document document = new Document();
         Section section = document.AddSection();
