@@ -51,7 +51,7 @@ namespace baseApplication
     string content = fileManager.OpenFile();
     if (content != null)
     {
-        dataComponent.Content = content;
+        dataComponent.MainContent = content;
         
         // Inform listeners that an open file action took place
         fileManager.OnFileOpened();
@@ -68,7 +68,7 @@ private void SaveMenuItem_Click(object sender, EventArgs e)
 
     try
     {
-        fileManager.WriteFile(fileManager.CurrentFilePath, dataComponent.Content);
+        fileManager.WriteFile(fileManager.CurrentFilePath, dataComponent.MainContent);
         // After writing to the file, trigger the FileSaved event.
         fileManager.OnFileSaved();
     }
@@ -80,7 +80,7 @@ private void SaveMenuItem_Click(object sender, EventArgs e)
 
 private void SaveAsMenuItem_Click(object sender, EventArgs e)
 {
-    if (fileManager.SaveAs(dataComponent.Content))
+    if (fileManager.SaveAs(dataComponent.MainContent))
     {
         MessageBox.Show("File saved successfully!");
     }
@@ -92,7 +92,7 @@ private void SaveAsMenuItem_Click(object sender, EventArgs e)
 
 private void NewMenuItem_Click(object sender, EventArgs e)
 {
-    if (!string.IsNullOrEmpty(dataComponent.Content))
+    if (!string.IsNullOrEmpty(dataComponent.MainContent))
     {
         DialogResult result = MessageBox.Show("Do you want to save changes?", "Unsaved Changes", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
 
@@ -105,7 +105,7 @@ private void NewMenuItem_Click(object sender, EventArgs e)
             return;
         }
     }
-    dataComponent.Content = string.Empty;
+    dataComponent.MainContent = string.Empty;
     fileManager.CurrentFilePath = null;
     fileManager.MarkAsUnsaved(); // mark as unsaved
 

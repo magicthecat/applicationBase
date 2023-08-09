@@ -12,32 +12,18 @@ public class DocumentProcessor
 
     public Document ProcessToDoc(string text)
     {
-        // Format the markdown first
-        text = MarkdownProcessor.CorrectMarkdown(text);
-
+        // Process the global variables before anything else
+         //MarkdownProcessor.CorrectMarkdown(text);
         string[] lines = text.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
         Document document = new Document();
         Section section = document.AddSection();
-
-        bool isGlobalSection = false;
-
+        
         foreach (string line in lines)
         {
             var type = parser.GetLineType(line);
 
-            if (isGlobalSection && type != MarkdownParser.LineType.GlobalsEnd)
-                continue;  // Skip lines inside the GLOBALS section
-
             switch (type)
             {
-                case MarkdownParser.LineType.GlobalsStart:
-                    isGlobalSection = true;
-                    break;
-
-                case MarkdownParser.LineType.GlobalsEnd:
-                    isGlobalSection = false;
-                    break;
-
                 case MarkdownParser.LineType.OrderedList:
                     var paragraph = section.AddParagraph();
                     paragraph.ListFormat.ApplyNumberedStyle();
@@ -64,10 +50,10 @@ public class DocumentProcessor
                     bulletParagraph.AppendText(line.Substring(2));
                     break;
 
-                case MarkdownParser.LineType.Regular:
-                    var regularParagraph = section.AddParagraph();
-                    regularParagraph.AppendText(line);
-                    break;
+                default:
+            var regularParagraph = section.AddParagraph();
+            regularParagraph.AppendText(line);
+            break;
             }
         }
 

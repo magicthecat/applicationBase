@@ -1,30 +1,42 @@
 public class TextBoxAdapter : IDataComponent, IZoomable
 {
-    private TextBox textBox;
+    private TextBox mainTextBox;
+    private TextBox globalsTextBox;
 
-    public TextBoxAdapter(TextBox textBox)
+    public TextBoxAdapter(TextBox mainTextBox, TextBox globalsTextBox)
     {
-        this.textBox = textBox;
-        this.textBox.TextChanged += (sender, e) => ContentChanged?.Invoke(this, e);
+        this.mainTextBox = mainTextBox;
+        this.globalsTextBox = globalsTextBox;
+
+        // ... wire up the events etc. as before
     }
 
-    public string Content
+    public string MainContent
     {
-        get { return textBox.Text; }
-        set { textBox.Text = value; }
+        get { return mainTextBox.Text; }
+        set { mainTextBox.Text = value; }
     }
 
-
-    public void ZoomIn()
+    public string GlobalsContent
     {
-        textBox.Font = new Font(textBox.Font.FontFamily, textBox.Font.Size + 1);
+        get { return globalsTextBox.Text; }
+        set { globalsTextBox.Text = value; }
     }
 
-    public void ZoomOut()
-    {
-        if (textBox.Font.Size > 1)
-            textBox.Font = new Font(textBox.Font.FontFamily, textBox.Font.Size - 1);
-    }
+public void ZoomIn()
+{
+    mainTextBox.Font = new Font(mainTextBox.Font.FontFamily, mainTextBox.Font.Size + 1);
+    globalsTextBox.Font = new Font(globalsTextBox.Font.FontFamily, globalsTextBox.Font.Size + 1);
+}
+
+public void ZoomOut()
+{
+    if (mainTextBox.Font.Size > 1)
+        mainTextBox.Font = new Font(mainTextBox.Font.FontFamily, mainTextBox.Font.Size - 1);
+
+    if (globalsTextBox.Font.Size > 1)
+        globalsTextBox.Font = new Font(globalsTextBox.Font.FontFamily, globalsTextBox.Font.Size - 1);
+}
 
     public event EventHandler ContentChanged;
 }

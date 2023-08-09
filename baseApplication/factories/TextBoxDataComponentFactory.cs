@@ -53,6 +53,6 @@ public class TextBoxDataComponentFactory : IDataComponentFactory
         mainTextBox.TextChanged += updateRichTextBox;
         globalsTextBox.TextChanged += updateRichTextBox;
 
-        return new TextBoxAdapter(mainTextBox); // Assuming you still want the IDataComponent interface for other functionalities.
+        return new TextBoxAdapter(mainTextBox, globalsTextBox);
     }
 }

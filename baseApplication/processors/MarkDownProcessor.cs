@@ -117,55 +117,9 @@ public static string GetFormattedRtfFromMarkdown(string markdownText)
         text = Regex.Replace(text, @"(\n|^)(\d+\.)\s*(\w)", "$1$2 $3");
         text = Regex.Replace(text, @"(\n|^)(\d+\))\s*(\w)", "$1$2 $3");
 
-        // Initialize dictionary to store global variables
-        Dictionary<string, string> globals = new Dictionary<string, string>();
-
-        // Split the text into lines
-        string[] lines = text.Split('\n');
-
-        // Process each line
-        for (int i = 0; i < lines.Length; i++)
-        {
-            // Check for GLOBALS block start
-            if (lines[i].Trim() == "/* GLOBALS")
-            {
-                // Process lines until end of GLOBALS block
-                while (lines[++i].Trim() != "*/")
-                {
-                    // Split line into name and value
-                    string[] parts = lines[i].Split(':', 2);
-                    if (parts.Length == 2)
-                    {
-                        // Remove '=' from variable name and trim both name and value
-                        string name = parts[0].Trim().TrimStart('=');
-                        string value = parts[1].Trim();
-
-                // Add to globals dictionary
-                globals[name] = value;
-            }
-        }
-
-        // Check if we reached the end of the array without finding a closing tag for GLOBALS
-        if (i == lines.Length - 1 && lines[i].Trim() != "*/")
-        {
-            // Handle error: No closing tag found for GLOBALS block.
-            throw new InvalidOperationException("No closing tag found for GLOBALS block.");
-        }
-    }
-      
-      
-                  // Replace variables in line
-            foreach (var global in globals)
-            {
-                lines[i] = lines[i].Replace("{" + global.Key + "}", global.Value);
-            }
-        }
-
-        // Combine lines back into single string
-        text = string.Join("\n", lines);
-
-        return text;
+        var formattedText = ProcessingFunctions.ExtractAndInsertGlobals(text);
+    
+        return formattedText;
     }
 
     }
-
