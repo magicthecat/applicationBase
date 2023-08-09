@@ -6221,6 +6221,7 @@
   },
   "projectFileDependencyGroups": {
     "net7.0-windows7.0": [
+      "FreeSpire.Doc >= 11.6.0",
       "Microsoft.NET.Test.Sdk >= 17.5.0",
       "Moq >= 4.20.2",
       "baseApplication >= 1.0.0",
@@ -6270,6 +6271,10 @@
       "net7.0-windows7.0": {
         "targetAlias": "net7.0-windows",
         "dependencies": {
+          "FreeSpire.Doc": {
+            "target": "Package",
+            "version": "[11.6.0, )"
+          },
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[17.5.0, )"
