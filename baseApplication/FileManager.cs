@@ -1,18 +1,23 @@
 using System;
 using System.IO;
-using System.Windows.Forms;
 
 namespace baseApplication
 {
     public class FileManager
     {
+        private readonly IFileService _fileService;
+        private readonly IDialogService _dialogService;
         private string currentFilePath = null;
+
+        public FileManager(IFileService fileService, IDialogService dialogService)
+        {
+            _fileService = fileService ?? throw new ArgumentNullException(nameof(fileService));
+            _dialogService = dialogService ?? throw new ArgumentNullException(nameof(dialogService));
+        }
+
         public event EventHandler FileSaved;
         public event EventHandler FileOpened;
-
-
-    public event EventHandler FileNew;
-
+        public event EventHandler FileNew;
 
         public string CurrentFilePath
         {
@@ -20,79 +25,72 @@ namespace baseApplication
             set { currentFilePath = value; }
         }
 
-
-public string CurrentFileName 
-{ 
-    get
-    {
-        if (string.IsNullOrEmpty(CurrentFilePath))
-            return null;
-        return Path.GetFileName(CurrentFilePath);
-    }
-}
-
-public virtual void OnFileNew()
-{
-    FileNew?.Invoke(this, EventArgs.Empty);
-}
-
-
-public virtual void OnFileOpened()
-{
-    FileOpened?.Invoke(this, EventArgs.Empty);
-}
-public bool IsSaved { get; private set; }
-        public string ReadFile(string path)
-        {
-            return File.ReadAllText(path);
+        public string CurrentFileName 
+        { 
+            get
+            {
+                if (string.IsNullOrEmpty(CurrentFilePath))
+                    return null;
+                return Path.GetFileName(CurrentFilePath);
+            }
         }
 
-   public void WriteFile(string path, string content)
-{
-    File.WriteAllText(path, content);
-    MarkAsSaved();
-}
+        public bool IsSaved { get; private set; }
 
+        public virtual void OnFileNew()
+        {
+            FileNew?.Invoke(this, EventArgs.Empty);
+        }
 
+        public void WriteFile(string path, string content)
+        {
+            _fileService.WriteFile(path, content);
+            MarkAsSaved();
+        }
+        public virtual void OnFileOpened()
+        {
+            FileOpened?.Invoke(this, EventArgs.Empty);
+        }
 
-           public void MarkAsSaved()
-    {
-        IsSaved = true;
-    }
+        public string OpenFile()
+        {
+            string path = _dialogService.ShowOpenFileDialog();
+            if (!string.IsNullOrEmpty(path))
+            {
+                CurrentFilePath = path;
+                IsSaved = true;  
+                return _fileService.ReadFile(path);
+            }
+            return null;
+        }
 
-    public void MarkAsUnsaved()
-    {
-        IsSaved = false;
-    }
+        public bool SaveAs(string content)
+        {
+            string path = _dialogService.ShowSaveFileDialog();
+            if (!string.IsNullOrEmpty(path))
+            {
+                _fileService.WriteFile(path, content);
+                CurrentFilePath = path;
+                MarkAsSaved();
+                OnFileSaved();
+                return true;
+            }
+            return false;
+        }
 
-public string OpenFile()
-{
-    OpenFileDialog openFileDialog = new OpenFileDialog();
-    if (openFileDialog.ShowDialog() == DialogResult.OK)
-    {
-        CurrentFilePath = openFileDialog.FileName; // Ensure this line is present
-        IsSaved = true;  
-        return ReadFile(openFileDialog.FileName);
-    }
-    return null;
-}
-    public virtual void OnFileSaved()
-{
-    FileSaved?.Invoke(this, EventArgs.Empty);
-}
+        public void MarkAsSaved()
+        {
+            IsSaved = true;
+        }
 
-public bool SaveAs(string content)
-{
-    SaveFileDialog saveFileDialog = new SaveFileDialog();
-    if (saveFileDialog.ShowDialog() == DialogResult.OK)
-    {
-        WriteFile(saveFileDialog.FileName, content);
-        CurrentFilePath = saveFileDialog.FileName;
-        MarkAsSaved(); 
-        OnFileSaved();
-        return true;
-    }
-    return false;
-}
+        public void MarkAsUnsaved()
+        {
+            IsSaved = false;
+        }
+
+        public virtual void OnFileSaved()
+        {
+            FileSaved?.Invoke(this, EventArgs.Empty);
+        }
     }
 }

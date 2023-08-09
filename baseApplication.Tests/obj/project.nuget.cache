@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "OkPrIXxL1HXxwZ/HymQw4TNufp/uryWtYom86VWD6TyXt4cpKXHHh5yKvC0G4lq1pQhRKzcapxLKPFi09u/IPQ==",
+  "dgSpecHash": "TCt/PumejKr7a058RFi46iwQRd9TEXxNmpIJsZA6gQxmfmQVm7xm5RidVIPkw/+VFL/u78Jmb0dk+i/0r/t9DQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\jpwas\\OneDrive\\Desktop\\applicationBase\\baseApplication.Tests\\baseApplication.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jpwas\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\jpwas\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
+    "C:\\Users\\jpwas\\.nuget\\packages\\coverlet.msbuild\\6.0.0\\coverlet.msbuild.6.0.0.nupkg.sha512",
     "C:\\Users\\jpwas\\.nuget\\packages\\freespire.doc\\11.6.0\\freespire.doc.11.6.0.nupkg.sha512",
     "C:\\Users\\jpwas\\.nuget\\packages\\microsoft.codecoverage\\17.5.0\\microsoft.codecoverage.17.5.0.nupkg.sha512",
     "C:\\Users\\jpwas\\.nuget\\packages\\microsoft.net.test.sdk\\17.5.0\\microsoft.net.test.sdk.17.5.0.nupkg.sha512",

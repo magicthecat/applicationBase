@@ -51,12 +51,10 @@ private void UpdateTitle()
 
 private void InitializeFileManager()
 {
-
-this.fileManager = new FileManager();
-this.fileManager.FileSaved += (sender, e) => UpdateTitle();
-this.fileManager.FileNew += (sender, e) => UpdateTitle();
-this.fileManager.FileOpened += (sender, e) => UpdateTitle();
-
+    this.fileManager = new FileManager(new DefaultFileService(), new DefaultDialogService());
+    this.fileManager.FileSaved += (sender, e) => UpdateTitle();
+    this.fileManager.FileNew += (sender, e) => UpdateTitle();
+    this.fileManager.FileOpened += (sender, e) => UpdateTitle();
 }
 
 private void InitializeZoomService()
