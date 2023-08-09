@@ -1,7 +1,6 @@
 public class ZoomService
 {
-    private Control control;
-
+    
     public void ZoomIn(IZoomable zoomableComponent)
     {
         zoomableComponent.ZoomIn();
