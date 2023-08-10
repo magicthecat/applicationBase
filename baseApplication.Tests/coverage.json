@@ -4,49 +4,49 @@
       "TextBoxAdapter": {
         "System.String TextBoxAdapter::get_MainContent()": {
           "Lines": {
-            "16": 0
+            "17": 0
           },
           "Branches": []
         },
         "System.Void TextBoxAdapter::set_MainContent(System.String)": {
           "Lines": {
-            "17": 0
+            "18": 0
           },
           "Branches": []
         },
         "System.String TextBoxAdapter::get_GlobalsContent()": {
           "Lines": {
-            "22": 0
+            "23": 0
           },
           "Branches": []
         },
         "System.Void TextBoxAdapter::set_GlobalsContent(System.String)": {
           "Lines": {
-            "23": 0
+            "24": 0
           },
           "Branches": []
         },
         "System.Void TextBoxAdapter::ZoomIn()": {
           "Lines": {
-            "27": 0,
             "28": 0,
             "29": 0,
-            "30": 0
+            "30": 0,
+            "31": 0
           },
           "Branches": []
         },
         "System.Void TextBoxAdapter::ZoomOut()": {
           "Lines": {
-            "33": 0,
             "34": 0,
             "35": 0,
-            "37": 0,
+            "36": 0,
             "38": 0,
-            "39": 0
+            "39": 0,
+            "40": 0
           },
           "Branches": [
             {
-              "Line": 34,
+              "Line": 35,
               "Offset": 26,
               "EndOffset": 28,
               "Path": 0,
@@ -54,7 +54,7 @@
               "Hits": 0
             },
             {
-              "Line": 34,
+              "Line": 35,
               "Offset": 26,
               "EndOffset": 83,
               "Path": 1,
@@ -62,7 +62,7 @@
               "Hits": 0
             },
             {
-              "Line": 37,
+              "Line": 38,
               "Offset": 108,
               "EndOffset": 110,
               "Path": 0,
@@ -70,11 +70,57 @@
               "Hits": 0
             },
             {
-              "Line": 37,
+              "Line": 38,
               "Offset": 108,
               "EndOffset": 165,
               "Path": 1,
               "Ordinal": 3,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void TextBoxAdapter::<.ctor>b__2_0(System.Object,System.EventArgs)": {
+          "Lines": {
+            "11": 0
+          },
+          "Branches": [
+            {
+              "Line": 11,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 11,
+              "Offset": 7,
+              "EndOffset": 12,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void TextBoxAdapter::<.ctor>b__2_1(System.Object,System.EventArgs)": {
+          "Lines": {
+            "12": 0
+          },
+          "Branches": [
+            {
+              "Line": 12,
+              "Offset": 7,
+              "EndOffset": 9,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 12,
+              "Offset": 7,
+              "EndOffset": 12,
+              "Path": 1,
+              "Ordinal": 1,
               "Hits": 0
             }
           ]
@@ -85,7 +131,7 @@
             "7": 0,
             "8": 0,
             "9": 0,
-            "12": 0
+            "13": 0
           },
           "Branches": []
         }
@@ -1270,371 +1316,73 @@
         }
       }
     },
-    "C:\\Users\\jpwas\\OneDrive\\Desktop\\applicationBase\\baseApplication\\FileManager.cs": {
-      "baseApplication.FileManager": {
-        "System.String baseApplication.FileManager::get_CurrentFilePath()": {
-          "Lines": {
-            "24": 3
-          },
-          "Branches": []
-        },
-        "System.Void baseApplication.FileManager::set_CurrentFilePath(System.String)": {
-          "Lines": {
-            "25": 6
-          },
-          "Branches": []
-        },
-        "System.String baseApplication.FileManager::get_CurrentFileName()": {
-          "Lines": {
-            "31": 0,
-            "32": 0,
-            "33": 0,
-            "34": 0,
-            "35": 0
-          },
-          "Branches": [
-            {
-              "Line": 32,
-              "Offset": 14,
-              "EndOffset": 16,
-              "Path": 0,
-              "Ordinal": 0,
-              "Hits": 0
-            },
-            {
-              "Line": 32,
-              "Offset": 14,
-              "EndOffset": 20,
-              "Path": 1,
-              "Ordinal": 1,
-              "Hits": 0
-            }
-          ]
-        },
-        "System.Boolean baseApplication.FileManager::get_IsSaved()": {
-          "Lines": {
-            "38": 6
-          },
-          "Branches": []
-        },
-        "System.Void baseApplication.FileManager::OnFileNew()": {
-          "Lines": {
-            "41": 1,
-            "42": 1,
-            "43": 1
-          },
-          "Branches": [
-            {
-              "Line": 42,
-              "Offset": 8,
-              "EndOffset": 10,
-              "Path": 0,
-              "Ordinal": 0,
-              "Hits": 0
-            },
-            {
-              "Line": 42,
-              "Offset": 8,
-              "EndOffset": 13,
-              "Path": 1,
-              "Ordinal": 1,
-              "Hits": 1
-            }
-          ]
-        },
-        "System.Void baseApplication.FileManager::WriteFile(System.String,System.String)": {
-          "Lines": {
-            "46": 1,
-            "47": 1,
-            "48": 1,
-            "49": 1
-          },
-          "Branches": []
-        },
-        "System.Void baseApplication.FileManager::OnFileOpened()": {
-          "Lines": {
-            "51": 0,
-            "52": 0,
-            "53": 0
-          },
-          "Branches": [
-            {
-              "Line": 52,
-              "Offset": 8,
-              "EndOffset": 10,
-              "Path": 0,
-              "Ordinal": 0,
-              "Hits": 0
-            },
-            {
-              "Line": 52,
-              "Offset": 8,
-              "EndOffset": 13,
-              "Path": 1,
-              "Ordinal": 1,
-              "Hits": 0
-            }
-          ]
-        },
-        "System.String baseApplication.FileManager::OpenFile()": {
-          "Lines": {
-            "56": 1,
-            "57": 1,
-            "58": 1,
-            "59": 1,
-            "60": 1,
-            "61": 1,
-            "62": 1,
-            "64": 0,
-            "65": 1
-          },
-          "Branches": [
-            {
-              "Line": 58,
-              "Offset": 24,
-              "EndOffset": 26,
-              "Path": 0,
-              "Ordinal": 0,
-              "Hits": 1
-            },
-            {
-              "Line": 58,
-              "Offset": 24,
-              "EndOffset": 58,
-              "Path": 1,
-              "Ordinal": 1,
-              "Hits": 0
-            }
-          ]
-        },
-        "System.Boolean baseApplication.FileManager::SaveAs(System.String)": {
-          "Lines": {
-            "68": 1,
-            "69": 1,
-            "70": 1,
-            "71": 1,
-            "72": 1,
-            "73": 1,
-            "74": 1,
-            "75": 1,
-            "76": 1,
-            "78": 0,
-            "79": 1
-          },
-          "Branches": [
-            {
-              "Line": 70,
-              "Offset": 24,
-              "EndOffset": 26,
-              "Path": 0,
-              "Ordinal": 0,
-              "Hits": 1
-            },
-            {
-              "Line": 70,
-              "Offset": 24,
-              "EndOffset": 67,
-              "Path": 1,
-              "Ordinal": 1,
-              "Hits": 0
-            }
-          ]
-        },
-        "System.Void baseApplication.FileManager::MarkAsSaved()": {
-          "Lines": {
-            "82": 2,
-            "83": 2,
-            "84": 2
-          },
-          "Branches": []
-        },
-        "System.Void baseApplication.FileManager::MarkAsUnsaved()": {
-          "Lines": {
-            "87": 0,
-            "88": 0,
-            "89": 0
-          },
-          "Branches": []
-        },
-        "System.Void baseApplication.FileManager::OnFileSaved()": {
-          "Lines": {
-            "92": 1,
-            "93": 1,
-            "94": 1
-          },
-          "Branches": [
-            {
-              "Line": 93,
-              "Offset": 8,
-              "EndOffset": 10,
-              "Path": 0,
-              "Ordinal": 0,
-              "Hits": 1
-            },
-            {
-              "Line": 93,
-              "Offset": 8,
-              "EndOffset": 13,
-              "Path": 1,
-              "Ordinal": 1,
-              "Hits": 0
-            }
-          ]
-        },
-        "System.Void baseApplication.FileManager::.ctor(IFileService,IDialogService)": {
-          "Lines": {
-            "10": 4,
-            "12": 4,
-            "13": 4,
-            "14": 4,
-            "15": 4,
-            "16": 4
-          },
-          "Branches": [
-            {
-              "Line": 14,
-              "Offset": 18,
-              "EndOffset": 20,
-              "Path": 0,
-              "Ordinal": 0,
-              "Hits": 0
-            },
-            {
-              "Line": 14,
-              "Offset": 18,
-              "EndOffset": 32,
-              "Path": 1,
-              "Ordinal": 1,
-              "Hits": 4
-            },
-            {
-              "Line": 15,
-              "Offset": 40,
-              "EndOffset": 42,
-              "Path": 0,
-              "Ordinal": 2,
-              "Hits": 0
-            },
-            {
-              "Line": 15,
-              "Offset": 40,
-              "EndOffset": 54,
-              "Path": 1,
-              "Ordinal": 3,
-              "Hits": 4
-            }
-          ]
-        }
-      }
-    },
     "C:\\Users\\jpwas\\OneDrive\\Desktop\\applicationBase\\baseApplication\\Form1.cs": {
       "baseApplication.Form1": {
+        "System.String baseApplication.Form1::get_Title()": {
+          "Lines": {
+            "18": 0
+          },
+          "Branches": []
+        },
+        "System.Void baseApplication.Form1::set_Title(System.String)": {
+          "Lines": {
+            "19": 0
+          },
+          "Branches": []
+        },
         "System.Void baseApplication.Form1::InitializeDataComponent()": {
           "Lines": {
-            "29": 0,
-            "30": 0,
-            "31": 0,
-            "32": 0
+            "36": 0,
+            "37": 0,
+            "38": 0,
+            "39": 0
           },
           "Branches": []
         },
         "System.Void baseApplication.Form1::DataComponent_ContentChanged(System.Object,System.EventArgs)": {
           "Lines": {
-            "35": 0,
-            "36": 0,
-            "37": 0,
-            "38": 0
+            "42": 0,
+            "43": 0,
+            "44": 0
           },
           "Branches": []
         },
-        "System.Void baseApplication.Form1::UpdateTitle()": {
-          "Lines": {
-            "41": 0,
-            "42": 0,
-            "43": 0,
-            "44": 0,
-            "45": 0,
-            "47": 0,
-            "48": 0,
-            "49": 0,
-            "50": 0
-          },
-          "Branches": [
-            {
-              "Line": 42,
-              "Offset": 19,
-              "EndOffset": 21,
-              "Path": 0,
-              "Ordinal": 0,
-              "Hits": 0
-            },
-            {
-              "Line": 42,
-              "Offset": 19,
-              "EndOffset": 37,
-              "Path": 1,
-              "Ordinal": 1,
-              "Hits": 0
-            },
-            {
-              "Line": 48,
-              "Offset": 50,
-              "EndOffset": 52,
-              "Path": 0,
-              "Ordinal": 2,
-              "Hits": 0
-            },
-            {
-              "Line": 48,
-              "Offset": 50,
-              "EndOffset": 75,
-              "Path": 1,
-              "Ordinal": 3,
-              "Hits": 0
-            }
-          ]
-        },
         "System.Void baseApplication.Form1::InitializeFileManager()": {
           "Lines": {
-            "53": 0,
-            "54": 0,
-            "55": 0,
-            "56": 0,
-            "57": 0,
-            "58": 0
+            "46": 0
           },
           "Branches": []
         },
         "System.Void baseApplication.Form1::InitializeZoomService()": {
           "Lines": {
+            "50": 0,
+            "51": 0,
+            "53": 0,
+            "54": 0,
+            "55": 0,
+            "57": 0,
+            "58": 0,
+            "59": 0,
+            "60": 0,
             "61": 0,
             "62": 0,
+            "63": 0,
             "64": 0,
             "65": 0,
             "66": 0,
+            "67": 0,
             "68": 0,
             "69": 0,
             "70": 0,
             "71": 0,
             "72": 0,
-            "73": 0,
             "74": 0,
             "75": 0,
-            "76": 0,
-            "77": 0,
-            "78": 0,
-            "79": 0,
-            "80": 0,
-            "81": 0,
-            "82": 0,
-            "83": 0,
-            "85": 0,
-            "86": 0,
-            "88": 0
+            "77": 0
           },
           "Branches": [
             {
-              "Line": 64,
+              "Line": 53,
               "Offset": 28,
               "EndOffset": 30,
               "Path": 0,
@@ -1642,7 +1390,7 @@
               "Hits": 0
             },
             {
-              "Line": 69,
+              "Line": 58,
               "Offset": 77,
               "EndOffset": 79,
               "Path": 0,
@@ -1650,7 +1398,7 @@
               "Hits": 0
             },
             {
-              "Line": 69,
+              "Line": 58,
               "Offset": 77,
               "EndOffset": 100,
               "Path": 1,
@@ -1658,7 +1406,7 @@
               "Hits": 0
             },
             {
-              "Line": 64,
+              "Line": 53,
               "Offset": 28,
               "EndOffset": 103,
               "Path": 1,
@@ -1669,22 +1417,22 @@
         },
         "System.Void baseApplication.Form1::InitializeMenuManager()": {
           "Lines": {
+            "81": 0,
+            "82": 0,
+            "84": 0,
+            "86": 0,
+            "87": 0,
+            "89": 0,
+            "90": 0,
+            "91": 0,
             "92": 0,
             "93": 0,
-            "95": 0,
-            "97": 0,
-            "98": 0,
-            "100": 0,
-            "101": 0,
-            "102": 0,
-            "103": 0,
-            "104": 0,
-            "105": 0,
-            "106": 0
+            "94": 0,
+            "95": 0
           },
           "Branches": [
             {
-              "Line": 100,
+              "Line": 89,
               "Offset": 77,
               "EndOffset": 79,
               "Path": 0,
@@ -1692,7 +1440,7 @@
               "Hits": 0
             },
             {
-              "Line": 100,
+              "Line": 89,
               "Offset": 77,
               "EndOffset": 104,
               "Path": 1,
@@ -1703,24 +1451,25 @@
         },
         "System.Void baseApplication.Form1::.ctor()": {
           "Lines": {
-            "15": 0,
-            "16": 0,
-            "17": 0,
-            "19": 0,
             "21": 0,
             "22": 0,
             "23": 0,
-            "24": 0,
             "25": 0,
-            "26": 0
+            "27": 0,
+            "28": 0,
+            "29": 0,
+            "30": 0,
+            "31": 0,
+            "32": 0,
+            "33": 0
           },
           "Branches": []
         },
-        "System.Void baseApplication.Form1::<InitializeZoomService>b__11_0(System.Object,System.Windows.Forms.MouseEventArgs)": {
+        "System.Void baseApplication.Form1::<InitializeZoomService>b__14_0(System.Object,System.Windows.Forms.MouseEventArgs)": {
           "Lines": {},
           "Branches": [
             {
-              "Line": 73,
+              "Line": 62,
               "Offset": 12,
               "EndOffset": 14,
               "Path": 0,
@@ -1728,7 +1477,7 @@
               "Hits": 0
             },
             {
-              "Line": 73,
+              "Line": 62,
               "Offset": 12,
               "EndOffset": 41,
               "Path": 1,
@@ -1805,48 +1554,450 @@
         }
       }
     },
+    "C:\\Users\\jpwas\\OneDrive\\Desktop\\applicationBase\\baseApplication\\managers\\FileManager.cs": {
+      "baseApplication.FileManager": {
+        "System.String baseApplication.FileManager::get_CurrentFilePath()": {
+          "Lines": {
+            "25": 6
+          },
+          "Branches": []
+        },
+        "System.Void baseApplication.FileManager::set_CurrentFilePath(System.String)": {
+          "Lines": {
+            "26": 6
+          },
+          "Branches": []
+        },
+        "System.String baseApplication.FileManager::get_CurrentFileName()": {
+          "Lines": {
+            "32": 0,
+            "33": 0,
+            "34": 0,
+            "35": 0,
+            "36": 0
+          },
+          "Branches": [
+            {
+              "Line": 33,
+              "Offset": 14,
+              "EndOffset": 16,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 33,
+              "Offset": 14,
+              "EndOffset": 20,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Boolean baseApplication.FileManager::get_IsSaved()": {
+          "Lines": {
+            "39": 5
+          },
+          "Branches": []
+        },
+        "System.Void baseApplication.FileManager::OnFileNew()": {
+          "Lines": {
+            "42": 0,
+            "43": 0,
+            "44": 0
+          },
+          "Branches": [
+            {
+              "Line": 43,
+              "Offset": 8,
+              "EndOffset": 10,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 43,
+              "Offset": 8,
+              "EndOffset": 13,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void baseApplication.FileManager::WriteFile(System.String,System.String)": {
+          "Lines": {
+            "47": 1,
+            "48": 1,
+            "49": 1,
+            "50": 1
+          },
+          "Branches": []
+        },
+        "System.Void baseApplication.FileManager::OnFileOpened()": {
+          "Lines": {
+            "52": 0,
+            "53": 0,
+            "54": 0
+          },
+          "Branches": [
+            {
+              "Line": 53,
+              "Offset": 8,
+              "EndOffset": 10,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 53,
+              "Offset": 8,
+              "EndOffset": 13,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.String baseApplication.FileManager::OpenFile()": {
+          "Lines": {
+            "57": 1,
+            "58": 1,
+            "59": 1,
+            "60": 1,
+            "61": 1,
+            "62": 1,
+            "63": 1,
+            "65": 0,
+            "66": 1
+          },
+          "Branches": [
+            {
+              "Line": 59,
+              "Offset": 24,
+              "EndOffset": 26,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 59,
+              "Offset": 24,
+              "EndOffset": 58,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Boolean baseApplication.FileManager::SaveAs(System.String)": {
+          "Lines": {
+            "69": 1,
+            "70": 1,
+            "71": 1,
+            "72": 1,
+            "73": 1,
+            "74": 1,
+            "75": 1,
+            "76": 1,
+            "77": 1,
+            "79": 0,
+            "80": 1
+          },
+          "Branches": [
+            {
+              "Line": 71,
+              "Offset": 24,
+              "EndOffset": 26,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 71,
+              "Offset": 24,
+              "EndOffset": 67,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void baseApplication.FileManager::MarkAsSaved()": {
+          "Lines": {
+            "83": 2,
+            "84": 2,
+            "85": 2,
+            "86": 2
+          },
+          "Branches": []
+        },
+        "System.Void baseApplication.FileManager::MarkAsUnsaved()": {
+          "Lines": {
+            "89": 0,
+            "90": 0,
+            "91": 0,
+            "92": 0
+          },
+          "Branches": []
+        },
+        "System.Void baseApplication.FileManager::OnFileSaved()": {
+          "Lines": {
+            "95": 3,
+            "96": 3,
+            "97": 3
+          },
+          "Branches": [
+            {
+              "Line": 96,
+              "Offset": 8,
+              "EndOffset": 10,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 3
+            },
+            {
+              "Line": 96,
+              "Offset": 8,
+              "EndOffset": 13,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void baseApplication.FileManager::OnFileUnsaved()": {
+          "Lines": {
+            "100": 0,
+            "101": 0,
+            "102": 0
+          },
+          "Branches": [
+            {
+              "Line": 101,
+              "Offset": 8,
+              "EndOffset": 10,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 101,
+              "Offset": 8,
+              "EndOffset": 13,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 0
+            }
+          ]
+        },
+        "System.Void baseApplication.FileManager::.ctor(IFileService,IDialogService)": {
+          "Lines": {
+            "10": 3,
+            "12": 3,
+            "13": 3,
+            "14": 3,
+            "15": 3,
+            "16": 3
+          },
+          "Branches": [
+            {
+              "Line": 14,
+              "Offset": 18,
+              "EndOffset": 20,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 18,
+              "EndOffset": 32,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 15,
+              "Offset": 40,
+              "EndOffset": 42,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 15,
+              "Offset": 40,
+              "EndOffset": 54,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            }
+          ]
+        }
+      }
+    },
+    "C:\\Users\\jpwas\\OneDrive\\Desktop\\applicationBase\\baseApplication\\managers\\TitleManager.cs": {
+      "baseApplication.TitleManager": {
+        "System.Void baseApplication.TitleManager::UpdateTitle()": {
+          "Lines": {
+            "25": 3,
+            "26": 3,
+            "27": 1,
+            "28": 1,
+            "29": 1,
+            "31": 2,
+            "32": 2,
+            "33": 2,
+            "34": 3
+          },
+          "Branches": [
+            {
+              "Line": 26,
+              "Offset": 19,
+              "EndOffset": 21,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 1
+            },
+            {
+              "Line": 26,
+              "Offset": 19,
+              "EndOffset": 42,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 2
+            },
+            {
+              "Line": 32,
+              "Offset": 60,
+              "EndOffset": 62,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 1
+            },
+            {
+              "Line": 32,
+              "Offset": 60,
+              "EndOffset": 85,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 1
+            }
+          ]
+        },
+        "System.Void baseApplication.TitleManager::<.ctor>b__3_0(System.Object,System.EventArgs)": {
+          "Lines": {
+            "17": 3
+          },
+          "Branches": []
+        },
+        "System.Void baseApplication.TitleManager::<.ctor>b__3_1(System.Object,System.EventArgs)": {
+          "Lines": {
+            "18": 3
+          },
+          "Branches": []
+        },
+        "System.Void baseApplication.TitleManager::<.ctor>b__3_2(System.Object,System.EventArgs)": {
+          "Lines": {
+            "19": 3
+          },
+          "Branches": []
+        },
+        "System.Void baseApplication.TitleManager::<.ctor>b__3_3(System.Object,System.EventArgs)": {
+          "Lines": {
+            "20": 3
+          },
+          "Branches": []
+        },
+        "System.Void baseApplication.TitleManager::.ctor(ITitle,IFileManager)": {
+          "Lines": {
+            "12": 3,
+            "13": 3,
+            "14": 3,
+            "15": 3,
+            "21": 3
+          },
+          "Branches": [
+            {
+              "Line": 14,
+              "Offset": 11,
+              "EndOffset": 13,
+              "Path": 0,
+              "Ordinal": 0,
+              "Hits": 0
+            },
+            {
+              "Line": 14,
+              "Offset": 11,
+              "EndOffset": 25,
+              "Path": 1,
+              "Ordinal": 1,
+              "Hits": 3
+            },
+            {
+              "Line": 15,
+              "Offset": 33,
+              "EndOffset": 35,
+              "Path": 0,
+              "Ordinal": 2,
+              "Hits": 0
+            },
+            {
+              "Line": 15,
+              "Offset": 33,
+              "EndOffset": 47,
+              "Path": 1,
+              "Ordinal": 3,
+              "Hits": 3
+            }
+          ]
+        }
+      }
+    },
     "C:\\Users\\jpwas\\OneDrive\\Desktop\\applicationBase\\baseApplication\\MenuManager.cs": {
       "baseApplication.MenuManager": {
         "System.Windows.Forms.MenuStrip baseApplication.MenuManager::InitializeMenuStrip()": {
           "Lines": {
+            "20": 0,
             "21": 0,
             "22": 0,
-            "23": 0,
+            "24": 0,
             "25": 0,
             "26": 0,
-            "27": 0,
+            "28": 0,
             "29": 0,
             "30": 0,
-            "31": 0,
+            "32": 0,
             "33": 0,
             "34": 0,
-            "35": 0,
+            "36": 0,
             "37": 0,
-            "38": 0,
+            "39": 0,
             "40": 0,
             "41": 0,
             "42": 0,
-            "43": 0,
-            "45": 0,
-            "47": 0,
-            "48": 0
+            "44": 0,
+            "46": 0,
+            "47": 0
           },
           "Branches": []
         },
         "System.Void baseApplication.MenuManager::OpenMenuItem_Click(System.Object,System.EventArgs)": {
           "Lines": {
+            "49": 0,
             "50": 0,
             "51": 0,
             "52": 0,
             "53": 0,
-            "54": 0,
+            "56": 0,
             "57": 0,
-            "58": 0,
-            "59": 0
+            "58": 0
           },
           "Branches": [
             {
-              "Line": 52,
+              "Line": 51,
               "Offset": 19,
               "EndOffset": 21,
               "Path": 0,
@@ -1854,7 +2005,7 @@
               "Hits": 0
             },
             {
-              "Line": 52,
+              "Line": 51,
               "Offset": 19,
               "EndOffset": 48,
               "Path": 1,
@@ -1865,24 +2016,24 @@
         },
         "System.Void baseApplication.MenuManager::SaveMenuItem_Click(System.Object,System.EventArgs)": {
           "Lines": {
+            "61": 0,
             "62": 0,
             "63": 0,
             "64": 0,
             "65": 0,
-            "66": 0,
+            "69": 0,
             "70": 0,
-            "71": 0,
+            "72": 0,
             "73": 0,
             "74": 0,
             "75": 0,
             "76": 0,
             "77": 0,
-            "78": 0,
-            "79": 0
+            "78": 0
           },
           "Branches": [
             {
-              "Line": 63,
+              "Line": 62,
               "Offset": 19,
               "EndOffset": 21,
               "Path": 0,
@@ -1890,7 +2041,7 @@
               "Hits": 0
             },
             {
-              "Line": 63,
+              "Line": 62,
               "Offset": 19,
               "EndOffset": 33,
               "Path": 1,
@@ -1901,19 +2052,19 @@
         },
         "System.Void baseApplication.MenuManager::SaveAsMenuItem_Click(System.Object,System.EventArgs)": {
           "Lines": {
+            "81": 0,
             "82": 0,
             "83": 0,
             "84": 0,
             "85": 0,
-            "86": 0,
+            "87": 0,
             "88": 0,
             "89": 0,
-            "90": 0,
-            "91": 0
+            "90": 0
           },
           "Branches": [
             {
-              "Line": 83,
+              "Line": 82,
               "Offset": 25,
               "EndOffset": 27,
               "Path": 0,
@@ -1921,7 +2072,7 @@
               "Hits": 0
             },
             {
-              "Line": 83,
+              "Line": 82,
               "Offset": 25,
               "EndOffset": 42,
               "Path": 1,
@@ -1932,27 +2083,27 @@
         },
         "System.Void baseApplication.MenuManager::NewMenuItem_Click(System.Object,System.EventArgs)": {
           "Lines": {
+            "93": 0,
             "94": 0,
             "95": 0,
             "96": 0,
-            "97": 0,
+            "98": 0,
             "99": 0,
             "100": 0,
             "101": 0,
             "102": 0,
             "103": 0,
             "104": 0,
-            "105": 0,
+            "106": 0,
             "107": 0,
             "108": 0,
             "109": 0,
-            "110": 0,
-            "113": 0,
-            "114": 0
+            "112": 0,
+            "113": 0
           },
           "Branches": [
             {
-              "Line": 95,
+              "Line": 94,
               "Offset": 22,
               "EndOffset": 24,
               "Path": 0,
@@ -1960,7 +2111,7 @@
               "Hits": 0
             },
             {
-              "Line": 99,
+              "Line": 98,
               "Offset": 50,
               "EndOffset": 52,
               "Path": 0,
@@ -1968,7 +2119,7 @@
               "Hits": 0
             },
             {
-              "Line": 99,
+              "Line": 98,
               "Offset": 50,
               "EndOffset": 65,
               "Path": 1,
@@ -1976,7 +2127,7 @@
               "Hits": 0
             },
             {
-              "Line": 103,
+              "Line": 102,
               "Offset": 71,
               "EndOffset": 73,
               "Path": 0,
@@ -1984,7 +2135,7 @@
               "Hits": 0
             },
             {
-              "Line": 103,
+              "Line": 102,
               "Offset": 71,
               "EndOffset": 76,
               "Path": 1,
@@ -1992,7 +2143,7 @@
               "Hits": 0
             },
             {
-              "Line": 95,
+              "Line": 94,
               "Offset": 22,
               "EndOffset": 77,
               "Path": 1,
@@ -2003,11 +2154,11 @@
         },
         "System.Void baseApplication.MenuManager::.ctor(IDataComponent,baseApplication.FileManager)": {
           "Lines": {
+            "13": 0,
             "14": 0,
             "15": 0,
             "16": 0,
-            "17": 0,
-            "18": 0
+            "17": 0
           },
           "Branches": []
         }

@@ -7,8 +7,7 @@ namespace baseApplication
     {
         private IDataComponent dataComponent;
         private FileManager fileManager;
-        public event EventHandler ContentChanged;
-                public event EventHandler FileSaved;
+        public event EventHandler FileSaved;
 
 
         public MenuManager(IDataComponent dataComponent, FileManager fileManager)
@@ -107,7 +106,7 @@ private void NewMenuItem_Click(object sender, EventArgs e)
     }
     dataComponent.MainContent = string.Empty;
     fileManager.CurrentFilePath = null;
-    fileManager.MarkAsUnsaved(); // mark as unsaved
+    fileManager.MarkAsUnsaved(); 
 
     // Inform listeners that a new file action took place
     fileManager.OnFileNew();

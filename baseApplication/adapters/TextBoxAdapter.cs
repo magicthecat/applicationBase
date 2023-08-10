@@ -8,7 +8,8 @@ public class TextBoxAdapter : IDataComponent, IZoomable
         this.mainTextBox = mainTextBox;
         this.globalsTextBox = globalsTextBox;
 
-        // ... wire up the events etc. as before
+        this.mainTextBox.TextChanged += (sender, e) => ContentChanged?.Invoke(this, e);
+        this.globalsTextBox.TextChanged += (sender, e) => ContentChanged?.Invoke(this, e);
     }
 
     public string MainContent

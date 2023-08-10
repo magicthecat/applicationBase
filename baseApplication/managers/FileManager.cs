@@ -3,7 +3,7 @@ using System.IO;
 
 namespace baseApplication
 {
-    public class FileManager
+  public class FileManager : IFileManager
     {
         private readonly IFileService _fileService;
         private readonly IDialogService _dialogService;
@@ -16,6 +16,7 @@ namespace baseApplication
         }
 
         public event EventHandler FileSaved;
+        public event EventHandler FileUnsaved;
         public event EventHandler FileOpened;
         public event EventHandler FileNew;
 
@@ -81,16 +82,23 @@ namespace baseApplication
         public void MarkAsSaved()
         {
             IsSaved = true;
+            OnFileSaved();
         }
 
         public void MarkAsUnsaved()
         {
             IsSaved = false;
+            OnFileUnsaved();
         }
 
         public virtual void OnFileSaved()
         {
             FileSaved?.Invoke(this, EventArgs.Empty);
+        }
+
+        public virtual void OnFileUnsaved()
+        {
+            FileUnsaved?.Invoke(this, EventArgs.Empty);
         }
     }
 }

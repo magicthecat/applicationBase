@@ -3,27 +3,34 @@ using System.Windows.Forms;
 
 namespace baseApplication
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form, ITitle
     {
         private IDataComponent dataComponent;
         private FileManager fileManager;
+        private TitleManager titleManager;
         private MenuManager menuManager;
         private IDataComponentFactory dataComponentFactory;
         private ZoomService zoomService;
         private ZoomMenu zoomMenu;
 
-        public Form1()
-        {
-            InitializeComponent();
+        public string Title 
+            {
+                get => this.Text;
+                set => this.Text = value;
+            }
+          public Form1()
+    {
+        InitializeComponent();
 
-           this.dataComponentFactory = new TextBoxDataComponentFactory(this);
-        
-            InitializeDataComponent();
-            InitializeFileManager();
-            InitializeZoomService();
-            InitializeMenuManager();
-            UpdateTitle(); 
-        }
+        this.dataComponentFactory = new TextBoxDataComponentFactory(this);
+
+        InitializeDataComponent();
+        InitializeFileManager();
+        InitializeZoomService();
+        InitializeMenuManager();
+        titleManager = new TitleManager(this, fileManager); 
+        titleManager.UpdateTitle(); 
+    }
 
       private void InitializeDataComponent()
 {
@@ -31,31 +38,13 @@ namespace baseApplication
     this.dataComponent.ContentChanged += DataComponent_ContentChanged;
 }
 
-private void DataComponent_ContentChanged(object sender, EventArgs e)
-{
+   private void DataComponent_ContentChanged(object sender, EventArgs e)
+    {
         fileManager.MarkAsUnsaved();
-    UpdateTitle();
-}
-
-private void UpdateTitle()
-{
-    if (string.IsNullOrEmpty(fileManager.CurrentFileName))
-    {
-        this.Text = "Untitled*";
     }
-    else
-    {
-        this.Text = fileManager.IsSaved ? fileManager.CurrentFileName : fileManager.CurrentFileName + "*";
-    }
-}
 
-private void InitializeFileManager()
-{
-    this.fileManager = new FileManager(new DefaultFileService(), new DefaultDialogService());
-    this.fileManager.FileSaved += (sender, e) => UpdateTitle();
-    this.fileManager.FileNew += (sender, e) => UpdateTitle();
-    this.fileManager.FileOpened += (sender, e) => UpdateTitle();
-}
+private void InitializeFileManager() => this.fileManager = new FileManager(new DefaultFileService(), new DefaultDialogService());
+  
 
 private void InitializeZoomService()
 {
