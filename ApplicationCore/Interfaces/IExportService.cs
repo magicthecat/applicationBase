@@ -2,7 +2,7 @@ namespace ApplicationCore.Interfaces
 {
     public interface IExportService
     {
-        string ToDocx(string content);
+        byte[] ToDocx(string content);
         string ToCSV(string content);
     }
 }
