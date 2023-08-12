@@ -5,14 +5,14 @@ public class CsvProcessor
     private MarkdownParser parser = new MarkdownParser();
 
 
-public string ProcessToCsv(string markdownText)
+public string ProcessToCsv(string text)
 {
-    markdownText = MarkdownProcessor.CorrectMarkdown(markdownText);
+    text = MarkdownProcessor.CorrectMarkdown(text);
 
     StringBuilder csvBuilder = new StringBuilder();
 
     // Split the text into lines
-    string[] lines = markdownText.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+    string[] lines = text.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
 
     List<string> headers = new List<string>();
     List<string> currentRow = new List<string>();

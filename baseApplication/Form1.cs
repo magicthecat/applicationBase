@@ -14,6 +14,8 @@ namespace baseApplication
         private ZoomService zoomService;
         private ZoomMenu zoomMenu;
         private ISaveFileDialogFactory saveFileDialogFactory;
+        private ExporterService exporterService;
+
 
         public string Title 
             {
@@ -35,12 +37,15 @@ namespace baseApplication
         titleManager.UpdateTitle(); 
     }
 
-      private void InitializeDataComponent()
+private void InitializeDataComponent()
 {
     this.dataComponent = dataComponentFactory.CreateAndSetup();
     this.dataComponent.ContentChanged += DataComponent_ContentChanged;
-            this.saveFileDialogWrapper = new SaveFileDialogWrapper(saveFileDialogFactory);
+    this.saveFileDialogWrapper = new SaveFileDialogWrapper(saveFileDialogFactory);
+   this.exporterService = new ExporterService(dataComponent, saveFileDialogWrapper); 
+
 }
+
 
 private void DataComponent_ContentChanged(object sender, EventArgs e) => fileManager.MarkAsUnsaved();
     
@@ -79,20 +84,18 @@ private void InitializeZoomService()
 }
 
 
-     private void InitializeMenuManager()
+private void InitializeMenuManager()
 {
     this.menuManager = new MenuManager(dataComponent, fileManager);
-
     MenuStrip menuStrip = menuManager.InitializeMenuStrip();
-
-    ExportMenu exportMenu = new ExportMenu(dataComponent, saveFileDialogWrapper);  
+    ExportMenu exportMenu = new ExportMenu(dataComponent, saveFileDialogWrapper, exporterService);  
     menuStrip.Items.Add(exportMenu.GenerateMenu());
 
     if (zoomMenu != null)
     {
         menuStrip.Items.Add(zoomMenu.GenerateMenu());
     }
-    
+
     this.MainMenuStrip = menuStrip;
     this.Controls.Add(menuStrip);
 }

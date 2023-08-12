@@ -1,0 +1,39 @@
+@inject IExportService ExportService
+
+<div class="note-editor">
+    <textarea @bind="NoteContent" rows="10" cols="50" placeholder="Enter your notes here..."></textarea>
+    
+    <div class="button-group">
+        <button @onclick="ExportToDocx">Export as Docx</button>
+        <button @onclick="ExportToCsv">Export as CSV</button>
+    </div>
+</div>
+
+<style>
+    .note-editor textarea {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+
+    .button-group {
+        margin-top: 10px;
+    }
+</style>
+
+@code {
+    private string NoteContent { get; set; } = string.Empty;
+
+    private void ExportToDocx()
+    {
+        var docxFilePath = ExportService.ToDocx(NoteContent);
+        // Logic to download or notify the user about the generated DOCX.
+    }
+
+    private void ExportToCsv()
+    {
+        var csvFilePath = ExportService.ToCSV(NoteContent);
+        // Logic to download or notify the user about the generated CSV.
+    }
+}

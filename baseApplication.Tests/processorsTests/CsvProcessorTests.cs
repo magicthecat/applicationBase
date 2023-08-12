@@ -22,7 +22,7 @@ public class CsvProcessorTests
         // Assert
         Assert.Equal(expectedOutput, csvOutput);
     }
-
+    
     [Fact]
     public void TestCsvConversionWithCommasInValue()
     {
