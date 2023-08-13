@@ -1,4 +1,5 @@
 using ApplicationCore.Interfaces;
+using ApplicationCore.Utilities;
 using Spire.Doc;
 using Spire.Doc.Documents;
 
@@ -19,10 +20,11 @@ namespace ApplicationCore.Services
             }
         }
 
-        public string ToCSV(string content)
-        {
-            // TO DO - add parsing logic.
-            return content;
-        }
+       public string ToCSV(string content)
+    {
+        CsvParser csvParser = new CsvParser();
+        content = csvParser.ProcessToCsv(content); 
+        return content;
+    }
     }
 }

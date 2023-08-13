@@ -3,6 +3,7 @@
 @inject IJSRuntime JSRuntime
 
 <div class="note-editor">
+    <textarea @bind="VariablesContent" rows="8" cols="50" placeholder="Enter your variables here..."></textarea>
     <textarea @bind="NoteContent" rows="10" cols="50" placeholder="Enter your notes here..."></textarea>
     
     <div class="button-group">
@@ -25,6 +26,7 @@
 
 @code {
     private string NoteContent { get; set; } = string.Empty;
+    private string VariablesContent {get; set;} = string.Empty;
 
 /*
     private async Task ExportToDocx()
@@ -36,7 +38,9 @@
 */
     private async Task ExportToCsv()
     {
-        var csvContent = ExportService.ToCSV(NoteContent);
+        var concatenatedData = "/* GLOBALS " + VariablesContent + " */ " + NoteContent;
+        Console.WriteLine(concatenatedData);
+        var csvContent = ExportService.ToCSV(concatenatedData);
         await JSRuntime.InvokeVoidAsync("downloadFile", "note.csv", csvContent, "text/csv");
     }
 
