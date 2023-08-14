@@ -7,12 +7,11 @@ namespace ApplicationCore.Utilities
    
     public class CsvParser
     {
-        private MarkdownParser parser = new MarkdownParser();
 
         public string ProcessToCsv(string text)
         {
             // Correct markdown and extract global variables
-            text = parser.CorrectMarkdown(text);
+            text = MarkdownParser.CorrectMarkdown(text);
             var globals = GlobalVariablesExtractor.ExtractGlobals(text);
 
             // Replace global variables in the text

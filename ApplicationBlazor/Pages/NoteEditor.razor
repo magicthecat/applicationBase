@@ -1,18 +1,52 @@
 @using ApplicationCore.Interfaces
+@using ApplicationCore.Utilities
 @inject IExportService ExportService
+@inject ITranslateService TranslateService
 @inject IJSRuntime JSRuntime
 
 <div class="note-editor">
-    <textarea @bind="VariablesContent" rows="8" cols="50" placeholder="Enter your variables here..."></textarea>
-    <textarea @bind="NoteContent" rows="10" cols="50" placeholder="Enter your notes here..."></textarea>
+    <div class="input-column">
+        <h3>Globals</h3>
+        <textarea @bind="VariablesContent" @bind:event="oninput" rows="8" cols="50" placeholder="Enter your variables here..."></textarea>
+        <h3>Text Input</h3>
+        <textarea @bind="NoteContent" @bind:event="oninput" rows="10" cols="50" placeholder="Enter your notes here..."></textarea>
+        
+        <div class="button-group">
+            <button @onclick="ExportToCsv">Export as CSV</button>
+        </div>
+    </div>
     
-    <div class="button-group">
-        <button @onclick="ExportToCsv">Export as CSV</button>
+    <div class="preview-column">
+        <h3>Live Preview</h3>
+        <div class="rich-text-preview">
+            @((MarkupString)ParsedMarkdown)
+        </div>
     </div>
 </div>
 
 <style>
-    .note-editor textarea {
+    .note-editor {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .input-column, .preview-column {
+        flex: 1;
+        min-width: 50%;
+        box-sizing: border-box;
+        padding: 10px;
+    }
+
+    .rich-text-preview {
+        border: 1px solid #ccc;
+        padding: 10px;
+        height: calc(100% - 3em); /* 3em is roughly the size of the h3 */
+        overflow-y: auto;
+    }
+
+
+
+    textarea {
         width: 100%;
         padding: 10px;
         box-sizing: border-box;
@@ -25,23 +59,38 @@
 </style>
 
 @code {
-    private string NoteContent { get; set; } = string.Empty;
-    private string VariablesContent {get; set;} = string.Empty;
+    private string _noteContent = string.Empty;
+    private string _variablesContent = string.Empty;
+    private string ParsedMarkdown { get; set; } = string.Empty;
 
-/*
-    private async Task ExportToDocx()
-    {
-        var docxContent = ExportService.ToDocx(NoteContent);
-        var base64DocxContent = Convert.ToBase64String(docxContent);
-        await JSRuntime.InvokeVoidAsync("downloadFile", "note.docx", base64DocxContent, "application/vnd.openxmlformats-officedocument.wordprocessingml.document");
+
+    private string NoteContent 
+    { 
+        get => _noteContent; 
+        set 
+        {
+            _noteContent = value;
+            UpdateParsedMarkdown();
+        }
     }
-*/
+
+    private string VariablesContent 
+    {
+        get => _variablesContent; 
+        set 
+        {
+            _variablesContent = value;
+            UpdateParsedMarkdown();
+        }
+    }
+
+    // Whenever there's a change in textarea content, parse and update live preview.
+    private void UpdateParsedMarkdown() => ParsedMarkdown = TranslateService.ToHtml(NoteContent, VariablesContent);
+
     private async Task ExportToCsv()
     {
         var concatenatedData = "/* GLOBALS " + VariablesContent + " */ " + NoteContent;
-        Console.WriteLine(concatenatedData);
         var csvContent = ExportService.ToCSV(concatenatedData);
         await JSRuntime.InvokeVoidAsync("downloadFile", "note.csv", csvContent, "text/csv");
     }
-
 }

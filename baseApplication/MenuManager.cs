@@ -108,7 +108,6 @@ private void NewMenuItem_Click(object sender, EventArgs e)
     fileManager.CurrentFilePath = null;
     fileManager.MarkAsUnsaved(); 
 
-    // Inform listeners that a new file action took place
     fileManager.OnFileNew();
 }
     }
