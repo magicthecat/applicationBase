@@ -2603,6 +2603,7 @@
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2649,7 +2650,7 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-            "version": "[7.0.9, 7.0.9]"
+            "version": "[7.0.10, 7.0.10]"
           }
         ],
         "frameworkReferences": {

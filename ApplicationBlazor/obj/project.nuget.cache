@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "svk8BivDVRphu6sGMD5XIVjH0zIH4qJJWZNEy9XrMYZFdMSNWb3rp6NURHo8bLTPoCftPXHed6pt1PlnTZnrKA==",
+  "dgSpecHash": "dp9pG+gK1VVVFCvxOvDDcWcYQK5CR2xJoVe4uhN8PCTFQf+AqYbW/8cL027/oqGXKZTY3eNshBO/+DWLDlOzcg==",
   "success": true,
   "projectFilePath": "C:\\Users\\jpwas\\OneDrive\\Desktop\\applicationBase\\ApplicationBlazor\\ApplicationBlazor.csproj",
   "expectedPackageFiles": [
@@ -42,7 +42,7 @@
     "C:\\Users\\jpwas\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
     "C:\\Users\\jpwas\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
     "C:\\Users\\jpwas\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
-    "C:\\Users\\jpwas\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.9\\microsoft.netcore.app.runtime.mono.browser-wasm.7.0.9.nupkg.sha512"
+    "C:\\Users\\jpwas\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\7.0.10\\microsoft.netcore.app.runtime.mono.browser-wasm.7.0.10.nupkg.sha512"
   ],
   "logs": []
 }
